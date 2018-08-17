@@ -22,7 +22,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt update
     apt -y --allow-unauthenticated install vim build-essential wget git gfortran bison 
     apt -y --allow-unauthenticated install libibverbs-dev libibmad-dev libibumad-dev 
-    apt -y --allow-unauthenticated installl librdmacm-dev libmlx5-dev libmlx4-dev
+    apt -y --allow-unauthenticated installl librdmacm-dev libmlx5-dev libmlx4-dev unzip
     
     echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     echo 'export XDG_RUNTIME_DIR=""' > /etc/profile.d/conda.sh && \
@@ -35,3 +35,14 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
     # mount point for Comet
     # mkdir /oasis
+    
+    cd /opt
+    git clone https://github.com/hallamlab/metapathways2.git
+    
+    curl -L https://www.dropbox.com/s/ye3kpve041e0r39/MetaPathways_DBs.zip?dl=1 > MetaPathwaysDBs.zip
+    unzip MetaPathwaysDBs.zip
+    rm MetaPathwaysDBs.zip
+    
+    
+    
+    
